@@ -16,3 +16,17 @@ export default {
   },
   plugins: [require('tailwind-scrollbar-hide')],
 }
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#14274E',
+        'secondary': '#394867',
+        'tertiary': '#9BA4B4',
+        'background': '#F1F6F9',
+      },
+    },
+  },
+  plugins: [],
+}

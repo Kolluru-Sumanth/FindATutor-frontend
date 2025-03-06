@@ -1,22 +1,25 @@
-import SearchBar from './components/SearchBar'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Features from './components/Explainer'
-import Filter from './components/filter'
-import Space from './components/space'
-import Profiles from './components/Profiles'
+import Home from './Pages/Home'
 import './App.css'
+import Filter from './Pages/Filter'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import TutorProfileForStudent from './Pages/TutorProfileForStudent'
+import TutorDashboard from './Pages/TutorDashboard'
+import StudentDashboard from './Pages/StudentDashboard'
 
 function App() {
 
   return (
     <div>
-      <Header />
-      <SearchBar/>
-      <Filter />
-      <Profiles />
-      <Features />
-      <Footer />
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/filter" element={<Filter />} />
+        <Route path='/tutor' element={<TutorProfileForStudent/>}/>
+        <Route path='TutorDashboard' element={<TutorDashboard/>}/>
+        <Route path='StudentDashboard' element={<StudentDashboard/>}/>
+        {/* payment page */}
+      </Routes>
+      </BrowserRouter>
     </div>
   )
 }
