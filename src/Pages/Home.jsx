@@ -9,7 +9,6 @@ function Home() {
 
   return (
     <div>
-      <Header />
       <SearchBar/>
       <Filter />
       <Profiles />

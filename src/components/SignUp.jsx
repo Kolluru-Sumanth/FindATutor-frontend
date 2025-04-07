@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const SignUp = ({ setShowSignIn }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
@@ -38,6 +39,19 @@ const SignUp = ({ setShowSignIn }) => {
             className="w-full border rounded px-3 py-2"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="email" className="block font-medium text-[#394867]">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            className="w-full border rounded px-3 py-2"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             required
           />
         </div>

@@ -2,7 +2,15 @@ import React, { useState, useEffect } from "react";
 
 const Profiles = () => {
   const [users, setUsers] = useState([]);
+  let subjects = ["Maths", "Physics", "Chemistry", "Biology", "CS", "History", "Geography", "English", "Literature", "Art", "Music", "Sports"];
 
+// Function to select a random subject
+function getRandomSubject(subjects) {
+    // Generate a random index
+    const randomIndex = Math.floor(Math.random() * subjects.length);
+    // Return the subject at the random index
+    return subjects[randomIndex];
+}
   // Fetch user data from Random User API
   useEffect(() => {
     const fetchUsers = async () => {
@@ -51,19 +59,26 @@ const Profiles = () => {
             {/* Static Tags */}
             <div className="px-6 py-4">
               <span className="inline-block px-2 py-1 font-semibold text-teal-900 bg-teal-200 rounded-full">
-                Web
+              {getRandomSubject(subjects)}
               </span>
               <span className="inline-block px-2 py-1 font-semibold text-indigo-900 bg-indigo-200 rounded-full">
-                UI/UX
+              {getRandomSubject(subjects)}
               </span>
               <span className="inline-block px-2 py-1 font-semibold text-purple-900 bg-purple-200 rounded-full">
-                Design
+              {getRandomSubject(subjects)}
               </span>
             </div>
 
             {/* Static View Profile Link */}
             <div className="px-6 py-4">
-              <a href="#" className="text-blue-500 hover:underline">
+              <a onClick={()=>{
+                if (localStorage.getItem('currentUser')){
+                  window.location.href = '/filter'                  
+                  }
+                  else {
+                    window.location.href = '/'
+                  }
+              }} className="text-blue-500 hover:underline">
                 Book a Free Session
               </a>
             </div>

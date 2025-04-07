@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SearchComponent = () => {
   const [isVisible, setIsVisible] = useState(false);
-
+  const navigate=useNavigate();
   useEffect(() => {
     // Wait for 1 second, then set the title to be visible
     const timer = setTimeout(() => {
@@ -65,6 +66,9 @@ const SearchComponent = () => {
             </div>
 
             <input
+              onClick={()=>{
+                navigate('/filter');
+              }}
               type="text"
               placeholder="Search for a tutor"
               className="w-full py-3 pl-12 pr-4 text-base text-[#394867] rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-[#394867] focus:ring-opacity-50"
